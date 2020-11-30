@@ -1,4 +1,3 @@
-
 proc distance*(before: string, after: string): int =
   if before.len != after.len:
     raise newException(ValueError, "you are a miserable human being.")
