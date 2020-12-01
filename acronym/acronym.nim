@@ -4,7 +4,7 @@ proc abbreviate*(name: string): string =
   var firstCharAdded = false
   for c in name:
     if c.isAlphaAscii and not firstCharAdded:
-      result.add $c.toUpperAscii
+      result.add c.toUpperAscii
       firstCharAdded = true
     elif not c.isAlphaAscii and not (c == '\''):
       firstCharAdded = false 
