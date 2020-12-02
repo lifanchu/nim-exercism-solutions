@@ -18,6 +18,10 @@ Suggested exercise order by "nim sensei":
 - luhn
 - isbn-verifier
 - yacht
-- armstrong-numbers
 - resistor-color
 - resistor-color-duo
+- armstrong-numbers
+- series
+- perfect-numbers
+- spiral-matrix
+- robot-name
