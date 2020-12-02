@@ -1,22 +1,12 @@
-import tables, strutils
+import sets, strutils
 
 proc isIsogram*(phrase: string): bool =
-    var inspected = initTable[char, int]()
+    var inspected = initHashSet[char]()
     for c in phrase:
         if c.isAlphaAscii:
             let cs = c.toLowerAscii
-            if inspected.hasKey(cs):
+            if inspected.contains(cs):
                 return false
             else:
-                inspected[cs] = 0
+                inspected.incl(cs)
     return true
-
-#slower
-# proc isIsogram*(phrase: string): bool =
-#     let counts = phrase.toLowerAscii.toCountTable
-#     for character, count in counts:
-#         if character.isAlphaAscii and count > 1:
-#             return false
-#     return true
-
-echo isIsogram("word")
