@@ -5,6 +5,7 @@ These are exercises from the nim track on exercism.
 Suggested exercise order by "nim sensei":
 
 - hello-world
+- two-fer
 - raindrops
 - collatz-conjecture
 - darts
