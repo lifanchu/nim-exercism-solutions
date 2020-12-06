@@ -1,5 +1,4 @@
-import sequtils, tables
-import sets
+import sequtils, tables, intsets
 
 type
     Rule* = enum
@@ -22,13 +21,13 @@ proc score*(raw_outcomes: openArray[int], category: Rule): int =
             if v >= 4: 
                 result = 4 * k
     of LittleStraight:
-        if toHashSet(outcomes) == toHashSet([1, 2, 3, 4, 5]):
+        if toIntSet(outcomes) == toIntSet([1, 2, 3, 4, 5]):
             result = 30
     of BigStraight:
-        if toHashSet(outcomes) == toHashSet([2, 3, 4, 5, 6]):
+        if toIntSet(outcomes) == toIntSet([2, 3, 4, 5, 6]):
             result = 30
     of Choice:
         result = outcomes.foldl(a+b)
     of Yacht:
-        if toHashSet(outcomes).len == 1: 
+        if toIntSet(outcomes).len == 1: 
             result = 50 

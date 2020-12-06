@@ -1,7 +1,7 @@
 import sets, strutils
 
 proc isIsogram*(phrase: string): bool =
-    var inspected = initHashSet[char]()
+    var inspected: set[char]
     for c in phrase:
         if c.isAlphaAscii:
             let cs = c.toLowerAscii
