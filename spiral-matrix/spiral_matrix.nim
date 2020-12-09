@@ -40,4 +40,3 @@ proc spiral*(size: static int): array[size, array[size, int]] =
       
       else:
         discard
-      
